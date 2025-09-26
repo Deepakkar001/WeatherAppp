@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native
 import { useNavigation } from '@react-navigation/native'
 import React, { useState } from 'react'
 import Inputt from '../components/Inputt'
-import { searchLocation } from '../redux/features/GetWeatherdata'
+import { getWeather } from '../redux/features/GetWeatherdata'
 const Search = () => {
     const navigation = useNavigation()
     //Managing the input state 
@@ -17,7 +17,7 @@ const Search = () => {
     const handleChange = (field) => async (value) => {
         setFormData(prev => ({ ...prev, [field]: value }))
         if (value.length >= 3) {
-            const results = await searchLocation(value) //Getting Value from async function
+            const results = await getWeather('search.json',value) //Getting Value from async function
             setSearchResults(results) //Updating the state
         } else {
             setSearchResults([])

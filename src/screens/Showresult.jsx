@@ -11,7 +11,7 @@ const Showresult = ({ route }) => {
 
     useEffect(() => {
         const fetchWeather = async () => {
-            const data = await getWeather(city)
+            const data = await getWeather('current.json',city)
             setWeatherData(data)
             if (data) {
                 // dispatch 

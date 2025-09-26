@@ -31,7 +31,10 @@ const LoginPage = ({ navigation, route }) => {
     if (result.success) {
       ToastAndroid.showWithGravity(result.message, ToastAndroid.SHORT, ToastAndroid.CENTER)
       setFormData({ mobile: '', mpin: '' })
-      navigation.navigate('HomePage')
+      navigation.reset({
+      index:0,
+      routes:[{name:'HomePage'}],
+    })
     } else {
       ToastAndroid.showWithGravity(result.message, ToastAndroid.SHORT, ToastAndroid.CENTER)
     }

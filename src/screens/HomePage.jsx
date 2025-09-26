@@ -10,11 +10,16 @@ const HomePage = ({ navigation }) => {
   const currentUser = useSelector(state => state.auth.currentUser)
   const weatherHistory = useSelector(state => state.weather.searchHistory)
 
+  
   const handleLogout = async () => {
     const result = await dispatch(performLogout())
     if (result.success) {
       navigation.navigate('LoginPage')
     }
+    navigation.reset({
+      index:0,
+      routes:[{name:'LoginPage'}],
+    })
   }
 
   return (

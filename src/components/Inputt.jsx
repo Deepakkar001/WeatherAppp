@@ -12,7 +12,8 @@ export default function Input({
   required = false,
   error,
   ...props
-}) {
+})
+ {
   return (
     <View style={styles.wrapper}>
       <Text style={styles.label}>

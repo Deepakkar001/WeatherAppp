@@ -3,7 +3,7 @@ import { persistStore, persistReducer } from 'redux-persist'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import authReducer from './features/authSlice'
 import weatherReducer from './features/weatherSlice'
-
+//Configuration to store the data in asyncStorage
 const persistConfig = {
   key: 'root',//identifiaction
   storage: AsyncStorage,//location
